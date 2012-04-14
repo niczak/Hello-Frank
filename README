@@ -1,0 +1,8 @@
+A sample application built with Sinatra featuring multiple GET/POST routes and examples on how to work with POST data.
+
+Assuming you have Ruby installed:
+ - 'gem install sinatra'
+ - 'gem install shotgun'
+
+Clone the repo and run:
+ - 'shotgun frank.rb'
