@@ -1,10 +1,14 @@
 require 'rubygems'
 require 'sinatra'
+#require 'data_mapper'
+require 'mongo'
+
 
 # Define not_found route if we want to avoid display the default
 # not_found do
 #   halt 404, 'page not found!'
 # end
+
 
 # Begin GET routes
 get '/' do
@@ -26,6 +30,14 @@ end
 
 get '/hello/:name/:city' do
   "Hello there, #{params[:name].capitalize} from #{params[:city]}."
+end
+
+get '/mongo' do
+  connection = Mongo::Connection.new("localhost")
+  db = connection.db("test")
+  collection = db.collection("test")
+  "<strong>Collections in test:</strong> #{db.collection_names}"
+  #collection.find().each { |doc| puts doc.inspect }
 end
 
 get '/more/*' do 
