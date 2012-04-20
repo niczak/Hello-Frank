@@ -4,5 +4,11 @@ Assuming you have Ruby installed:
  - 'gem install sinatra'
  - 'gem install shotgun'
 
+Mongo Setup:
+ - 'gem update --system'
+ - 'gem install mongo'
+ - 'gem install bson_ext'
+
 Clone the repo and run:
- - 'shotgun frank.rb'
+ - 'mongod' <-- starts MongoDB server.
+ - 'shotgun frank.rb' <-- launches the app.
